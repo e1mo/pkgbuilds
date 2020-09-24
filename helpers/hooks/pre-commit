@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for f in */
+do if test -f "$f/PKGBUILD"; then
+	echo $f
+	cd $f;
+	makepkg --printsrcinfo > .SRCINFO;
+	cd ../;
+fi
+done
